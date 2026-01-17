@@ -17,7 +17,9 @@
       --line: #262626;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -36,12 +38,13 @@
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 72px 20px 140px;
+      padding: 72px 24px 140px;
     }
 
     .nav {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       margin-bottom: 120px;
       font-size: 14px;
       letter-spacing: 0.05em;
@@ -58,79 +61,85 @@
       grid-template-columns: 340px 1fr;
       column-gap: 96px;
       align-items: start;
-      margin-bottom: 24px;
     }
 
-    .headshot {
+    .profile img {
       width: 300px;
       height: 380px;
       object-fit: cover;
       border-radius: 8px;
       border: 1px solid rgba(255,255,255,0.15);
       box-shadow: 0 18px 40px rgba(0,0,0,0.45);
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
-    .profile-name {
-      font-family: "Playfair Display", serif;
-      font-size: 28px;
+    .profile h2 {
       margin: 0 0 6px;
+      font-family: "Playfair Display", serif;
+      font-weight: 400;
+      font-size: 28px;
     }
 
-    .profile-meta {
+    .profile p {
+      margin: 0;
       font-size: 14px;
       color: var(--muted);
-      margin: 0;
     }
 
     .profile-links {
-      margin-top: 18px;
+      margin-top: 16px;
+      font-size: 14px;
     }
 
     .profile-links a {
       margin-right: 14px;
-      font-size: 13px;
       border-bottom: none;
       color: var(--muted);
     }
 
+    .right-column {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
     .intro h1 {
       font-family: "Playfair Display", serif;
-      font-size: 52px;
-      margin: 0 0 28px;
+      font-size: 48px;
+      font-weight: 400;
+      margin: 0 0 24px;
     }
 
     .intro p {
       font-size: 18px;
       color: var(--muted);
-      max-width: 640px;
+      max-width: 680px;
+      margin: 0;
     }
 
     .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 96px;
-      margin-left: calc(340px + 96px);
-      margin-top: 8px;
-      margin-bottom: 140px;
     }
 
     .info-grid h3 {
       font-family: "Playfair Display", serif;
+      font-weight: 400;
+      margin: 0 0 16px;
       font-size: 24px;
-      margin-bottom: 20px;
     }
 
     .info-grid ul {
       list-style: none;
       padding: 0;
       margin: 0;
+      color: var(--muted);
     }
 
     .info-grid li {
-      margin-bottom: 16px;
+      margin-bottom: 10px;
       font-size: 16px;
-      color: var(--muted);
     }
 
     footer {
@@ -142,12 +151,12 @@
     @media (max-width: 900px) {
       .hero {
         grid-template-columns: 1fr;
+        row-gap: 64px;
       }
 
       .info-grid {
-        margin-left: 0;
         grid-template-columns: 1fr;
-        gap: 64px;
+        gap: 48px;
       }
     }
   </style>
@@ -166,13 +175,12 @@
     </div>
 
     <div class="hero">
-      <div>
-        <img class="headshot" src="assets/profile.jpg" alt="Taeuk Im">
 
-        <h2 class="profile-name">Taeuk Im</h2>
-        <p class="profile-meta">Master’s Student</p>
-        <p class="profile-meta">KAIST · ACAI Lab</p>
-
+      <div class="profile">
+        <img src="assets/profile.jpg" alt="Taeuk Im">
+        <h2>Taeuk Im</h2>
+        <p>Master’s Student</p>
+        <p>KAIST · ACAI Lab</p>
         <div class="profile-links">
           <a href="#">CV</a>
           <a href="#">Email</a>
@@ -181,32 +189,36 @@
         </div>
       </div>
 
-      <div class="intro">
-        <h1>Hello!</h1>
-        <p>
-          I am a master’s student in Aerospace Engineering at KAIST,
-          working on 6G satellite communication systems and
-          space–air–ground integrated networks at the ACAI Lab.
-        </p>
-      </div>
-    </div>
+      <div class="right-column">
 
-    <div class="info-grid">
-      <div>
-        <h3>Interests</h3>
-        <ul>
-          <li>6G satellite communications</li>
-          <li>SSO-assisted architectures</li>
-          <li>AI-driven resource allocation</li>
-        </ul>
-      </div>
+        <div class="intro">
+          <h1>Hello!</h1>
+          <p>
+            I am a master’s student in Aerospace Engineering at KAIST, working on
+            6G satellite communication systems and space–air–ground integrated
+            networks at the ACAI Lab.
+          </p>
+        </div>
 
-      <div>
-        <h3>Education</h3>
-        <ul>
-          <li><strong>M.S. in Aerospace Engineering</strong><br>KAIST</li>
-          <li><strong>B.S.</strong><br>(Your Undergraduate)</li>
-        </ul>
+        <div class="info-grid">
+          <div>
+            <h3>Interests</h3>
+            <ul>
+              <li>6G satellite communications</li>
+              <li>SSO-assisted architectures</li>
+              <li>AI-driven resource allocation</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Education</h3>
+            <ul>
+              <li><strong>M.S. in Aerospace Engineering</strong><br>KAIST</li>
+              <li><strong>B.S.</strong><br>(Your Undergraduate)</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
 
