@@ -5,7 +5,6 @@
   <title>Taeuk Im</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts (akshay-style editorial typography) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
@@ -18,9 +17,7 @@
       --line: #262626;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -36,17 +33,14 @@
       border-bottom: 1px solid var(--line);
     }
 
-    a:hover {
-      opacity: 0.7;
-    }
+    a:hover { opacity: 0.7; }
 
     .container {
-      max-width: 900px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 72px 20px 140px;
     }
 
-    /* Navigation */
     .nav {
       display: flex;
       justify-content: space-between;
@@ -56,9 +50,7 @@
       letter-spacing: 0.05em;
     }
 
-    .nav-left {
-      font-weight: 500;
-    }
+    .nav-left { font-weight: 500; }
 
     .nav-right a {
       margin-left: 28px;
@@ -66,30 +58,56 @@
       color: var(--muted);
     }
 
-    /* Hero (photo left, text right) */
     .hero {
-      display: flex;
-      align-items: flex-start;
-      gap: 56px;
-      margin-bottom: 140px;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      column-gap: 96px;
+      align-items: start;
+      margin-bottom: 80px;
+    }
+
+    .profile {
+      text-align: left;
     }
 
     .headshot {
       width: 300px;
       height: 380px;
       object-fit: cover;
-
-      /* square, not circular */
       border-radius: 8px;
-
       border: 1px solid rgba(255,255,255,0.15);
       box-shadow: 0 18px 40px rgba(0,0,0,0.45);
-      flex-shrink: 0;
+      margin-bottom: 20px;
+    }
+
+    .profile-name {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      font-weight: 400;
+      margin: 0 0 6px;
+    }
+
+    .profile-role,
+    .profile-org {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .profile-links {
+      margin-top: 18px;
+    }
+
+    .profile-links a {
+      margin-right: 14px;
+      font-size: 13px;
+      border-bottom: none;
+      color: var(--muted);
     }
 
     .intro h1 {
       font-family: "Playfair Display", serif;
-      font-size: 48px;
+      font-size: 52px;
       font-weight: 400;
       margin: 0 0 28px;
     }
@@ -97,34 +115,34 @@
     .intro p {
       font-size: 18px;
       color: var(--muted);
-      max-width: 560px;
+      max-width: 640px;
       margin: 0;
     }
 
-    /* Sections */
-    .section {
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 96px;
       margin-bottom: 140px;
     }
 
-    .section-title {
-      font-size: 12px;
-      letter-spacing: 0.22em;
-      color: var(--muted);
-      margin-bottom: 24px;
+    .info-grid h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 20px;
     }
 
-    .section-content {
-      font-size: 20px;
-      max-width: 720px;
-    }
-
-    .section-content ul {
+    .info-grid ul {
+      list-style: none;
+      padding: 0;
       margin: 0;
-      padding-left: 22px;
     }
 
-    .section-content li {
-      margin-bottom: 12px;
+    .info-grid li {
+      margin-bottom: 18px;
+      font-size: 16px;
+      color: var(--muted);
     }
 
     footer {
@@ -133,12 +151,10 @@
       color: var(--muted);
     }
 
-    /* Mobile */
     @media (max-width: 720px) {
       .hero {
-        flex-direction: column;
-        gap: 32px;
-        margin-bottom: 100px;
+        grid-template-columns: 1fr;
+        row-gap: 40px;
       }
 
       .headshot {
@@ -147,13 +163,13 @@
         height: auto;
       }
 
-      .intro h1 {
-        font-size: 38px;
+      .info-grid {
+        grid-template-columns: 1fr;
+        gap: 64px;
       }
 
-      .intro p {
-        font-size: 16px;
-      }
+      .intro h1 { font-size: 40px; }
+      .intro p { font-size: 16px; }
     }
   </style>
 </head>
@@ -161,7 +177,6 @@
 <body>
   <div class="container">
 
-    <!-- Navigation -->
     <div class="nav">
       <div class="nav-left">Taeuk Im</div>
       <div class="nav-right">
@@ -171,58 +186,53 @@
       </div>
     </div>
 
-    <!-- Hero -->
     <div class="hero">
 
-      <img class="headshot" src="assets/profile.jpg" alt="Taeuk Im profile photo">
+      <div class="profile">
+        <img class="headshot" src="assets/profile.jpg" alt="Taeuk Im profile photo">
+
+        <h2 class="profile-name">Taeuk Im</h2>
+        <p class="profile-role">Master’s Student</p>
+        <p class="profile-org">KAIST · ACAI Lab</p>
+
+        <div class="profile-links">
+          <a href="#">CV</a>
+          <a href="#">Email</a>
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
 
       <div class="intro">
-        <h1>Taeuk Im</h1>
+        <h1>Hello!</h1>
         <p>
-          Master's student in <strong>Aerospace Engineering</strong>
-          <br>
-          <strong>KAIST (Korea Advanced Institute of Science and Technology)</strong>
-          
-          <br><br>
-          Researcher at <strong>KAIST ACAI Lab</strong>.
+          I am a master’s student in Aerospace Engineering at KAIST,
+          working on 6G satellite communication systems and
+          space–air–ground integrated networks at the ACAI Lab.
         </p>
       </div>
 
     </div>
 
-    <!-- Section 1 -->
-    <div class="section">
-      <div class="section-title">CURRENTLY EXPLORING</div>
-      <div class="section-content">
-        <p>
-          Multi-shell satellite architectures, SSO-assisted computation offloading,
-          energy-aware resource allocation, and AI-driven control for non-terrestrial
-          networks toward 6G.
-        </p>
-      </div>
-    </div>
-
-    <!-- Section 2 -->
-    <div class="section">
-      <div class="section-title">ALONG THE WAY</div>
-      <div class="section-content">
+    <div class="info-grid">
+      <div>
+        <h3>Interests</h3>
         <ul>
-          <li>SSO-assisted multi-shell space data center modeling</li>
-          <li>Computation offloading in LEO mega-constellations</li>
-          <li>DRL-based topology-aware routing</li>
+          <li>6G satellite communications</li>
+          <li>SSO-assisted architectures</li>
+          <li>AI-driven resource allocation</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Education</h3>
+        <ul>
+          <li><strong>M.S. in Aerospace Engineering</strong><br>KAIST</li>
+          <li><strong>B.S.</strong><br>(Your Undergraduate)</li>
         </ul>
       </div>
     </div>
 
-    <!-- Section 3 -->
-    <div class="section">
-      <div class="section-title">UPDATES</div>
-      <div class="section-content">
-        <p>2026 — Personal research homepage launched.</p>
-      </div>
-    </div>
-
-    <!-- Footer -->
     <footer>
       © 2026 Taeuk Im · KAIST ACAI Lab
     </footer>
