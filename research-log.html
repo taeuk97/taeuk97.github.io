@@ -58,9 +58,6 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 80px 24px;
-      display: grid;
-      grid-template-columns: 1fr;
-      align-items: start;
     }
 
     .content-inner {
@@ -89,27 +86,9 @@
     }
 
     .log-card {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 28px;
-      padding: 28px 0;
+      padding: 30px 0;
       border-top: 1px solid rgba(255, 255, 255, 0.10);
       border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-    }
-
-    .log-thumb {
-      width: 100%;
-      border-radius: 14px;
-      overflow: hidden;
-      background: #161616;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .log-thumb img {
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-      display: block;
     }
 
     .log-meta {
@@ -119,7 +98,7 @@
     }
 
     .log-title {
-      font-size: 23px;
+      font-size: 25px;
       font-weight: 500;
       margin: 0 0 10px;
       color: #ffffff;
@@ -145,7 +124,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin: 12px 0 16px;
+      margin: 14px 0 18px;
     }
 
     .tag {
@@ -172,10 +151,11 @@
       text-decoration: underline;
     }
 
+    /* ---------- FOOTER ---------- */
     footer {
       max-width: 1200px;
       margin: 120px auto 0;
-      padding: 0 24px;
+      padding: 0 24px 32px;
       font-size: 13px;
       color: #777;
     }
@@ -184,15 +164,6 @@
     @media (max-width: 900px) {
       .content-inner h2 {
         font-size: 38px;
-      }
-
-      .log-card {
-        grid-template-columns: 1fr;
-      }
-
-      .log-thumb img {
-        height: auto;
-        max-height: 320px;
       }
     }
 
@@ -214,6 +185,14 @@
       }
 
       .intro {
+        font-size: 16px;
+      }
+
+      .log-title {
+        font-size: 22px;
+      }
+
+      .log-desc {
         font-size: 16px;
       }
     }
@@ -250,44 +229,31 @@
 
           <article class="log-card">
 
-            <a class="log-thumb" href="research-log/satellite-constellation-design.html">
-              <img
-                src="assets/research-log/satellite-constellation-design.gif"
-                alt="Satellite constellation design simulation"
-              >
-            </a>
+            <div class="log-meta">
+              Simulation Collection
+            </div>
 
-            <div>
+            <h3 class="log-title">
+              <a href="research-log/satellite-constellation-design.html">
+                Satellite Constellation Design
+              </a>
+            </h3>
 
-              <div class="log-meta">
-                August 2026 · Simulation
-              </div>
+            <p class="log-desc">
+              Simulations and visualizations related to satellite constellation
+              geometry, orbital dynamics, and constellation evolution.
+            </p>
 
-              <h3 class="log-title">
-                <a href="research-log/satellite-constellation-design.html">
-                  Satellite Constellation Design
-                </a>
-              </h3>
+            <div class="tags">
+              <span class="tag">Constellation Design</span>
+              <span class="tag">Astrodynamics</span>
+              <span class="tag">Orbital Simulation</span>
+            </div>
 
-              <p class="log-desc">
-                A collection of small simulations exploring satellite constellation
-                geometry, orbital dynamics, and the time-varying behavior of
-                multi-satellite systems.
-              </p>
-
-              <div class="tags">
-                <span class="tag">Constellation Design</span>
-                <span class="tag">Astrodynamics</span>
-                <span class="tag">Walker Constellation</span>
-                <span class="tag">Orbital Simulation</span>
-              </div>
-
-              <div class="log-links">
-                <a href="research-log/satellite-constellation-design.html">
-                  View simulations
-                </a>
-              </div>
-
+            <div class="log-links">
+              <a href="research-log/satellite-constellation-design.html">
+                View simulations
+              </a>
             </div>
 
           </article>
