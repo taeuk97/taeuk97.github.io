@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <title>Taeuk Im</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts -->
+  <title>Taeuk Im</title>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;600&display=swap"
     rel="stylesheet"
@@ -16,59 +25,288 @@
 
   <style>
 
-    /* =========================================================
-       GLOBAL
-    ========================================================= */
-
     * {
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
+
       background: #0b0b0b;
-      color: #ffffff;
+      color: #fff;
+
       font-family: Inter, system-ui, sans-serif;
+
       line-height: 1.6;
     }
 
-    img {
-      max-width: 100%;
+
+    /* ========================================
+       PAGE LAYOUT
+    ======================================== */
+
+    .page {
+      max-width: 1200px;
+
+      margin: 0 auto;
+
+      padding: 80px 24px;
+
+      display: grid;
+
+      grid-template-columns: 360px 1fr;
+
+      column-gap: 100px;
+
+      align-items: start;
     }
 
 
-    /* =========================================================
+    /* ========================================
+       LEFT PROFILE
+    ======================================== */
+
+    .profile {
+      text-align: center;
+    }
+
+    .profile img {
+      width: 260px;
+      height: 260px;
+
+      object-fit: cover;
+
+      border-radius: 50%;
+
+      margin-bottom: 24px;
+    }
+
+    .profile h1 {
+      font-family: "Playfair Display", serif;
+
+      font-size: 36px;
+
+      margin: 0 0 8px;
+
+      font-weight: 600;
+    }
+
+    .profile p {
+      margin: 0;
+
+      font-size: 15px;
+
+      color: #b5b5b5;
+    }
+
+
+    /* ========================================
+       EDUCATION
+    ======================================== */
+
+    .school {
+      display: inline-block;
+
+      margin-top: 2px;
+
+      font-size: 14px;
+
+      color: #8f8f8f;
+    }
+
+    .edu-link {
+      margin-left: 8px;
+
+      font-size: 13px;
+
+      color: #8f8f8f;
+
+      text-decoration: none;
+
+      border-bottom:
+        1px dotted rgba(255, 255, 255, 0.3);
+    }
+
+    .edu-link:hover {
+      color: #ffb7a5;
+
+      border-bottom-color: #ffb7a5;
+    }
+
+
+    /* ========================================
+       PROFILE LINKS
+    ======================================== */
+
+    .links {
+      margin-top: 20px;
+    }
+
+    .links a {
+      margin: 0 10px;
+
+      color: #ffb7a5;
+
+      text-decoration: none;
+
+      font-weight: 500;
+    }
+
+
+    /* ========================================
+       RIGHT CONTENT
+    ======================================== */
+
+    .content-inner {
+      width: 100%;
+    }
+
+    .content-inner h2 {
+      font-family: "Playfair Display", serif;
+
+      font-size: 44px;
+
+      margin: 0 0 20px;
+
+      font-weight: 600;
+    }
+
+    .content-inner p {
+      max-width: 720px;
+
+      font-size: 18px;
+
+      color: #d0d0d0;
+
+      margin-bottom: 56px;
+    }
+
+
+    /* ========================================
+       INTERESTS / EDUCATION
+    ======================================== */
+
+    .two-col {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      column-gap: 120px;
+    }
+
+    .section h3 {
+      font-family: "Playfair Display", serif;
+
+      font-size: 26px;
+
+      margin-bottom: 20px;
+
+      font-weight: 600;
+    }
+
+    .section ul {
+      list-style: none;
+
+      padding: 0;
+
+      margin: 0;
+
+      color: #b5b5b5;
+
+      font-size: 17px;
+    }
+
+    .section li {
+      margin-bottom: 14px;
+    }
+
+
+    /* ========================================
+       BOTTOM CAMPUS IMAGE
+    ======================================== */
+
+    .campus-bottom {
+      grid-column: 1 / -1;
+
+      margin-top: 90px;
+    }
+
+    .campus-bottom img {
+      display: block;
+
+      width: 100%;
+
+      height: 430px;
+
+      object-fit: cover;
+
+      object-position: center;
+
+      border-radius: 10px;
+    }
+
+    .campus-caption {
+      margin-top: 10px;
+
+      font-size: 12px;
+
+      color: #666;
+
+      letter-spacing: 0.02em;
+    }
+
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+
+    footer {
+      max-width: 1200px;
+
+      margin: 40px auto 0;
+
+      padding: 0 24px 40px;
+
+      font-size: 13px;
+
+      color: #777;
+    }
+
+
+    /* ========================================
        NAVBAR
-    ========================================================= */
+    ======================================== */
 
     .navbar {
       position: sticky;
+
       top: 0;
+
       z-index: 100;
 
       background: rgba(11, 11, 11, 0.9);
 
-      -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
 
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      -webkit-backdrop-filter: blur(10px);
+
+      border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
     }
 
     .nav-inner {
       max-width: 1200px;
+
       margin: 0 auto;
 
       padding: 16px 24px;
 
       display: flex;
-      align-items: center;
+
       gap: 28px;
 
       overflow-x: auto;
+
       white-space: nowrap;
 
       scrollbar-width: none;
@@ -84,9 +322,8 @@
       text-decoration: none;
 
       font-size: 15px;
-      font-weight: 500;
 
-      transition: color 0.2s ease;
+      font-weight: 500;
     }
 
     .nav-inner a:hover {
@@ -94,321 +331,20 @@
     }
 
 
-    /* =========================================================
-       PAGE LAYOUT
-    ========================================================= */
-
-    .page {
-      max-width: 1200px;
-      margin: 0 auto;
-
-      padding: 64px 24px 80px;
-
-      display: grid;
-      grid-template-columns: 360px 1fr;
-
-      column-gap: 100px;
-
-      align-items: start;
-    }
-
-
-    /* =========================================================
-       LEFT PROFILE
-    ========================================================= */
-
-    .profile {
-      text-align: center;
-    }
-
-    /*
-      > 를 사용해서
-      프로필 메인 사진에만 이 스타일이 적용되도록 함.
-      아래의 KAIST duck 이미지는 별도 스타일 사용.
-    */
-
-    .profile > img {
-      width: 260px;
-      height: 260px;
-
-      object-fit: cover;
-
-      border-radius: 50%;
-
-      margin-bottom: 24px;
-    }
-
-    .profile h1 {
-      margin: 0 0 8px;
-
-      font-family: "Playfair Display", serif;
-      font-size: 36px;
-      font-weight: 600;
-    }
-
-    .profile p {
-      margin: 0;
-
-      font-size: 15px;
-
-      color: #b5b5b5;
-    }
-
-
-    /* =========================================================
-       PROFILE LINKS
-    ========================================================= */
-
-    .links {
-      margin-top: 20px;
-
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-
-      gap: 8px 18px;
-    }
-
-    .links a {
-      color: #ffb7a5;
-
-      text-decoration: none;
-
-      font-size: 15px;
-      font-weight: 500;
-
-      transition:
-        color 0.2s ease,
-        opacity 0.2s ease;
-    }
-
-    .links a:hover {
-      color: #ffffff;
-    }
-
-
-    /* =========================================================
-       SMALL KAIST / DUCK PHOTO
-    ========================================================= */
-
-    .profile-campus {
-      width: 260px;
-
-      margin: 48px auto 0;
-
-      text-align: left;
-    }
-
-    .profile-campus img {
-      display: block;
-
-      width: 100%;
-      height: 160px;
-
-      object-fit: cover;
-      object-position: center;
-
-      border-radius: 8px;
-    }
-
-    .profile-campus figcaption {
-      margin-top: 9px;
-
-      color: #707070;
-
-      font-size: 12px;
-      letter-spacing: 0.02em;
-    }
-
-
-    /* =========================================================
-       RIGHT CONTENT
-    ========================================================= */
-
-    .content {
-      min-width: 0;
-    }
-
-    .content-inner {
-      width: 100%;
-    }
-
-
-    /* =========================================================
-       MAIN KAIST CAMPUS PHOTO
-    ========================================================= */
-
-    .campus-photo {
-      width: 100%;
-
-      margin: 0 0 42px;
-    }
-
-    .campus-photo img {
-      display: block;
-
-      width: 100%;
-      height: 290px;
-
-      object-fit: cover;
-
-      /*
-        KAIST 표지석과 E4 건물이 자연스럽게 보이도록.
-        사진에 따라 50~55% 정도 조절 가능.
-      */
-      object-position: 52% center;
-
-      border-radius: 10px;
-    }
-
-
-    /* =========================================================
-       INTRO
-    ========================================================= */
-
-    .content-inner h2 {
-      margin: 0 0 20px;
-
-      font-family: "Playfair Display", serif;
-
-      font-size: 44px;
-      font-weight: 600;
-
-      line-height: 1.2;
-    }
-
-    .intro {
-      max-width: 720px;
-
-      margin: 0 0 44px;
-
-      color: #d0d0d0;
-
-      font-size: 18px;
-      line-height: 1.75;
-    }
-
-
-    /* =========================================================
-       INTERESTS + EDUCATION
-    ========================================================= */
-
-    .two-col {
-      display: grid;
-
-      grid-template-columns: 0.85fr 1.15fr;
-
-      column-gap: 64px;
-    }
-
-    .section h3 {
-      margin: 0 0 20px;
-
-      font-family: "Playfair Display", serif;
-
-      font-size: 26px;
-      font-weight: 600;
-    }
-
-    .section ul {
-      margin: 0;
-      padding: 0;
-
-      list-style: none;
-
-      color: #b5b5b5;
-
-      font-size: 17px;
-    }
-
-    .section li {
-      margin-bottom: 14px;
-    }
-
-    .section strong {
-      color: #e5e5e5;
-
-      font-weight: 500;
-    }
-
-
-    /* =========================================================
-       EDUCATION DETAILS
-    ========================================================= */
-
-    .school {
-      display: inline-block;
-
-      margin-top: 4px;
-
-      color: #8f8f8f;
-
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .edu-link {
-      display: inline-block;
-
-      margin-left: 8px;
-
-      color: #8f8f8f;
-
-      font-size: 13px;
-
-      text-decoration: none;
-
-      border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
-
-      transition:
-        color 0.2s ease,
-        border-color 0.2s ease;
-    }
-
-    .edu-link:hover {
-      color: #ffb7a5;
-
-      border-bottom-color: #ffb7a5;
-    }
-
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-
-    footer {
-      max-width: 1200px;
-
-      margin: 40px auto 0;
-
-      padding: 0 24px 40px;
-
-      color: #777777;
-
-      font-size: 13px;
-    }
-
-
-    /* =========================================================
+    /* ========================================
        TABLET
-    ========================================================= */
+    ======================================== */
 
     @media (max-width: 900px) {
 
       .page {
         grid-template-columns: 1fr;
 
-        row-gap: 64px;
-
-        padding-top: 56px;
+        row-gap: 80px;
       }
 
       .profile {
         text-align: center;
-      }
-
-      .profile-campus {
-        margin-top: 36px;
       }
 
       .content-inner {
@@ -417,82 +353,45 @@
         margin: 0 auto;
       }
 
-      .campus-photo img {
-        height: 280px;
-      }
-
       .content-inner h2 {
         font-size: 38px;
       }
 
       .two-col {
-        grid-template-columns: 0.8fr 1.2fr;
+        grid-template-columns: 1fr 1fr;
 
         column-gap: 48px;
+      }
+
+      .campus-bottom {
+        grid-column: 1;
+
+        width: 100%;
+
+        margin-top: 10px;
+      }
+
+      .campus-bottom img {
+        height: 350px;
       }
 
     }
 
 
-    /* =========================================================
+    /* ========================================
        MOBILE
-    ========================================================= */
+    ======================================== */
 
     @media (max-width: 600px) {
 
-      .nav-inner {
-        gap: 22px;
-
-        padding: 14px 18px;
-      }
-
-      .nav-inner a {
-        font-size: 14px;
-      }
-
       .page {
-        padding: 40px 20px 60px;
-
-        row-gap: 56px;
+        padding: 56px 20px;
       }
 
-      .profile > img {
+      .profile img {
         width: 220px;
+
         height: 220px;
-      }
-
-      .profile h1 {
-        font-size: 32px;
-      }
-
-      .profile-campus {
-        width: min(320px, 100%);
-
-        margin-top: 38px;
-      }
-
-      .profile-campus img {
-        height: 180px;
-      }
-
-      .campus-photo {
-        margin-bottom: 34px;
-      }
-
-      .campus-photo img {
-        height: 210px;
-
-        border-radius: 8px;
-      }
-
-      .content-inner h2 {
-        font-size: 35px;
-      }
-
-      .intro {
-        font-size: 16px;
-
-        margin-bottom: 42px;
       }
 
       .two-col {
@@ -501,20 +400,14 @@
         row-gap: 48px;
       }
 
-      .section h3 {
-        font-size: 24px;
+      .campus-bottom {
+        margin-top: 0;
       }
 
-      .section ul {
-        font-size: 16px;
-      }
+      .campus-bottom img {
+        height: 220px;
 
-      footer {
-        margin-top: 20px;
-
-        padding: 0 20px 30px;
-
-        line-height: 1.6;
+        border-radius: 8px;
       }
 
     }
@@ -526,9 +419,9 @@
 <body>
 
 
-  <!-- =======================================================
+  <!-- ======================================
        NAVIGATION
-  ======================================================== -->
+  ======================================= -->
 
   <nav class="navbar">
 
@@ -568,16 +461,16 @@
 
 
 
-  <!-- =======================================================
+  <!-- ======================================
        MAIN PAGE
-  ======================================================== -->
+  ======================================= -->
 
   <main class="page">
 
 
-    <!-- =====================================================
+    <!-- ====================================
          LEFT PROFILE
-    ====================================================== -->
+    ===================================== -->
 
     <aside class="profile">
 
@@ -586,11 +479,9 @@
         alt="Taeuk Im"
       >
 
-
       <h1>
         Taeuk Im
       </h1>
-
 
       <p>
         Master’s Student
@@ -600,8 +491,6 @@
         KAIST · ACAI Lab
       </p>
 
-
-      <!-- LINKS -->
 
       <div class="links">
 
@@ -613,13 +502,11 @@
           CV
         </a>
 
-
         <a
           href="mailto:luckylife236@kaist.ac.kr"
         >
           Email
         </a>
-
 
         <a
           href="https://github.com/taeuk97"
@@ -628,7 +515,6 @@
         >
           GitHub
         </a>
-
 
         <a
           href="https://www.linkedin.com/in/taeuk-im-6178702b5"
@@ -640,65 +526,31 @@
 
       </div>
 
-
-      <!-- SMALL KAIST PHOTO -->
-
-      <figure class="profile-campus">
-
-        <img
-          src="assets/KAIST_duck.jpeg"
-          alt="KAIST campus characters"
-        >
-
-        <figcaption>
-          KAIST · Daejeon
-        </figcaption>
-
-      </figure>
-
     </aside>
 
 
 
-    <!-- =====================================================
+    <!-- ====================================
          RIGHT CONTENT
-    ====================================================== -->
+    ===================================== -->
 
     <section class="content">
 
       <div class="content-inner">
 
 
-        <!-- MAIN CAMPUS PHOTO -->
-
-        <figure class="campus-photo">
-
-          <img
-            src="assets/KAIST_campus.jpeg"
-            alt="KAIST campus"
-          >
-
-        </figure>
-
-
-        <!-- INTRO -->
-
         <h2>
-          Hello, I'm Taeuk.
+          Hello!
         </h2>
 
 
-        <p class="intro">
-
+        <p>
           I am a master’s student in Aerospace Engineering at KAIST,
           working on Orbital Edge Computing and Satellite Networks at
           the Aerospace Communications & Applied Intelligence (ACAI) Lab.
-
         </p>
 
 
-
-        <!-- INTERESTS + EDUCATION -->
 
         <div class="two-col">
 
@@ -710,7 +562,6 @@
             <h3>
               Interests
             </h3>
-
 
             <ul>
 
@@ -731,7 +582,7 @@
               </li>
 
               <li>
-                Space Data Centers
+                Space Data Center
               </li>
 
               <li>
@@ -756,11 +607,8 @@
               Education
             </h3>
 
-
             <ul>
 
-
-              <!-- KAIST -->
 
               <li>
 
@@ -778,8 +626,6 @@
               </li>
 
 
-
-              <!-- YONSEI -->
 
               <li>
 
@@ -808,8 +654,6 @@
 
 
 
-              <!-- HIGH SCHOOL -->
-
               <li>
 
                 <strong>
@@ -836,13 +680,33 @@
 
     </section>
 
+
+
+    <!-- ====================================
+         FULL WIDTH CAMPUS IMAGE
+    ===================================== -->
+
+    <section class="campus-bottom">
+
+      <img
+        src="assets/KAIST_campus.jpeg"
+        alt="KAIST campus"
+      >
+
+      <div class="campus-caption">
+        KAIST · Daejeon, Korea
+      </div>
+
+    </section>
+
+
   </main>
 
 
 
-  <!-- =======================================================
+  <!-- ======================================
        FOOTER
-  ======================================================== -->
+  ======================================= -->
 
   <footer>
 
@@ -853,5 +717,4 @@
 
 
 </body>
-
 </html>
