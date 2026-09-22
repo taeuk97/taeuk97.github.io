@@ -5,5 +5,8 @@
 
 ## Command
 
-```bash
-traceroute 8.8.8.8
+traceroute -n 8.8.8.8
+
+## ECMP
+## Equal Cost Multi Path
+![Traceroute result](1.png)
