@@ -1,7 +1,7 @@
-# Internet Measurement
+# Practice
 
-This page contains my study notes on Internet measurement.
+Internet measurement practice notes.
 
 ## Contents
 
-- [Practice](practice/)
+- [Traceroute](traceroute.html)
