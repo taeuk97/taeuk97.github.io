@@ -3,7 +3,7 @@ plugins:
 
 defaults:
   - scope:
-      path: "notes"
+      path: "note"
       type: "pages"
     values:
       layout: "note"
