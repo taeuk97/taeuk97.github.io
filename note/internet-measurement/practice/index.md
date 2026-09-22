@@ -4,4 +4,4 @@ Internet measurement practice notes.
 
 ## Contents
 
-- [Traceroute](traceroute.html)
+- [traceroute](traceroute.html)
