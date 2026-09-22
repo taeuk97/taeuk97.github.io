@@ -8,5 +8,5 @@
 traceroute -n 8.8.8.8
 
 ## ECMP
-## Equal Cost Multi Path
+### Equal Cost Multi Path
 ![Traceroute result](1.png)
