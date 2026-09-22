@@ -6,6 +6,7 @@ traceroute -n 8.8.8.8
 
 We use 3 probe packets for each TTL (Time To Live).<br>
 We use UDP (User Datagram Protocol) by default in Linux.
+For the reference, the result of the traceroute can differ based on what kind of probe do we use. e.g. ICMP, UDP..
 
 ## ECMP: One Type of Load Balancer
 ### Equal Cost Multi Path
