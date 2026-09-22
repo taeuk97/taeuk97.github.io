@@ -4,7 +4,7 @@
 
 traceroute -n 8.8.8.8
 
-we use 3 probe packets for each TTL(Time To Live).\\
+we use 3 probe packets for each TTL(Time To Live).<br>
 we use UDP(User Datagram Protocol) as defaul in linux.
 
 ## ECMP : One type of load balancer
