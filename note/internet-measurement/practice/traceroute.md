@@ -7,8 +7,9 @@
 
 traceroute -n 8.8.8.8
 
-## ECMP
+## ECMP : One type of load balancer
 ### Equal Cost Multi Path
+#### It uses hashing. (Source IP,Destination IP,Source Port,Destination Port,Protocol) 
 ![Traceroute result](1.png)
 
 
