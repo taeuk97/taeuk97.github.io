@@ -1,1 +1,9 @@
+plugins:
+  - jekyll-optional-front-matter
 
+defaults:
+  - scope:
+      path: "notes"
+      type: "pages"
+    values:
+      layout: "note"
