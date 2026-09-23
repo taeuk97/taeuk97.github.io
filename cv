@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Curriculum vitae of Taeuk Im, a master's student in Aerospace Engineering at KAIST.">
+  <title>CV | Taeuk Im</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #0b0b0b;
+      color: #fff;
+      font-family: Inter, system-ui, sans-serif;
+      line-height: 1.7;
+    }
+    a { color: #ffb7a5; text-decoration: none; }
+    a:hover { color: #fff; text-decoration: underline; }
+    a:focus-visible { outline: 2px solid #ffb7a5; outline-offset: 5px; }
+
+    /* Shared top navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 11, 11, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      gap: 28px;
+      overflow-x: auto;
+    }
+    .nav-inner a {
+      flex-shrink: 0;
+      color: #d0d0d0;
+      font-size: 15px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .nav-inner a:hover { color: #fff; text-decoration: none; }
+    .nav-inner a[aria-current="page"] { color: #ffb7a5; }
+
+    /* Page header */
+    .page { max-width: 1200px; margin: 0 auto; padding: 72px 24px 24px; }
+    .content-inner { width: 100%; max-width: 900px; }
+    .cv-header { margin-bottom: 32px; }
+    .cv-header h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 44px;
+      line-height: 1.2;
+      font-weight: 600;
+      margin: 0 0 20px;
+    }
+    .cv-name { margin: 0 0 8px; font-size: 24px; font-weight: 500; }
+    .contact-line { margin: 0 0 20px; color: #b5b5b5; overflow-wrap: anywhere; }
+    .button {
+      display: inline-block;
+      padding: 9px 16px;
+      border: 1px solid rgba(255, 183, 165, 0.5);
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .button:hover { background: rgba(255, 183, 165, 0.08); text-decoration: none; }
+    .section-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      padding: 20px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 14px;
+    }
+
+    /* CV sections: same order as the attached CV */
+    .cv-section { margin-top: 48px; scroll-margin-top: 90px; }
+    .cv-section h2 {
+      margin: 0 0 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+    .entry { margin-bottom: 30px; }
+    .entry:last-child { margin-bottom: 0; }
+    .entry-heading {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 6px 20px;
+      margin-bottom: 4px;
+    }
+    .entry h3 { margin: 0; font-size: 19px; line-height: 1.5; font-weight: 500; }
+    .entry-heading h3 { flex: 1 1 420px; }
+    .entry-date { color: #aaa; font-size: 14px; white-space: nowrap; }
+    .entry-meta { margin: 5px 0; color: #b5b5b5; font-size: 15px; }
+    .entry p, .entry li, .section-text { color: #d0d0d0; font-size: 16px; }
+    .entry p { margin: 8px 0; }
+    .entry .entry-meta { color: #b5b5b5; font-size: 15px; }
+    .entry ul { margin: 12px 0 0; padding-left: 22px; }
+    .entry li { margin-bottom: 10px; }
+    .entry li:last-child { margin-bottom: 0; }
+    .entry strong { color: #fff; font-weight: 600; }
+    .section-text { margin: 0; }
+    .pub-links { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 12px; }
+    .pub-links a { font-size: 14px; font-weight: 500; }
+    footer {
+      max-width: 1200px;
+      margin: 80px auto 0;
+      padding: 0 24px 32px;
+      color: #999;
+      font-size: 13px;
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner { gap: 22px; padding: 14px 20px; }
+      .page { padding: 44px 20px 20px; }
+      .cv-header h1 { font-size: 36px; }
+      .cv-section h2 { font-size: 25px; }
+      .entry-heading { flex-direction: column; align-items: flex-start; gap: 4px; }
+      .entry-heading h3 { flex: none; }
+      .entry-date { white-space: normal; }
+      footer { padding-left: 20px; padding-right: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html">Home</a>
+      <a href="cv.html" aria-current="page">CV</a>
+      <a href="projects.html">Projects</a>
+      <a href="research-log.html">Research Log</a>
+      <a href="notes.html">Notes</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="content-inner">
+      <header class="cv-header">
+        <h1>Curriculum Vitae</h1>
+        <p class="cv-name">Taeuk Im</p>
+        <p class="contact-line">
+          Daejeon, South Korea<br>
+          <a href="mailto:luckylife236@kaist.ac.kr">luckylife236@kaist.ac.kr</a>
+          &middot; <a href="tel:+821098395850">+82-10-9839-5850</a>
+        </p>
+        <a class="button" href="assets/Taeuk_Im_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+      </header>
+
+      <nav class="section-nav" aria-label="CV sections">
+        <a href="#education">Education</a>
+        <a href="#conferences">Conferences / Presentations</a>
+        <a href="#manuscripts">Manuscripts Under Review</a>
+        <a href="#research-experience">Research Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#work-experience">Work Experience</a>
+        <a href="#test-scores">Test Scores</a>
+        <a href="#awards">Awards &amp; Honors</a>
+      </nav>
+
+      <!-- 1. Education -->
+      <section class="cv-section" id="education" aria-labelledby="education-title">
+        <h2 id="education-title">Education</h2>
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>M.S. in Aerospace Engineering</h3>
+            <span class="entry-date">Sep 2025 - Aug 2027 (Expected)</span>
+          </div>
+          <p class="entry-meta">KAIST (Korea Advanced Institute of Science and Technology), Daejeon, South Korea</p>
+          <p>GPA: 3.66 / 4.3 (3.67 / 4.0)</p>
+          <p>
+            Advisor: Prof. Jihwan Choi<br>
+            <a href="https://acai-kaist.github.io" target="_blank" rel="noopener">
+              Aerospace Communications &amp; Applied Intelligence (ACAI) Lab
+            </a>
+          </p>
+        </article>
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>B.S. in Astronomy</h3>
+            <span class="entry-date">Mar 2023 - Aug 2025</span>
+          </div>
+          <p class="entry-meta">Yonsei University, Seoul, South Korea</p>
+          <p>GPA: 3.88 / 4.3 (3.72 / 4.0)</p>
+          <p>High Honors, 1st Semester, 2024; Honors, 2nd Semester, 2023</p>
+        </article>
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>Undergraduate Studies in Electrical Engineering (Prior to Transfer)</h3>
+            <span class="entry-date">Mar 2018 - Dec 2020</span>
+          </div>
+          <p class="entry-meta">Sejong University, Seoul, South Korea</p>
+          <p>GPA: 4.38 / 4.5 (3.95 / 4.0)</p>
+        </article>
+      </section>
+
+      <!-- 2. Conferences / Presentations -->
+      <section class="cv-section" id="conferences" aria-labelledby="conferences-title">
+        <h2 id="conferences-title">Conferences / Presentations</h2>
+        <article class="entry">
+          <h3>Performance Evaluation of Space Data Centers: DDSSO-Assisted LEO Mega-Constellations</h3>
+          <p><strong>T. Im</strong>, S. Kim, I. Choi, and J. Choi</p>
+          <p class="entry-meta">
+            The Korean Institute of Communications and Information Sciences (KICS)
+            Summer Conference 2026 &middot; Jun 2026<br>
+            HAEVICHI, Jeju, Korea
+          </p>
+          <div class="pub-links">
+            <a href="assets/docs/kics2026/2026_summer_poster.pdf" target="_blank" rel="noopener">Poster (PDF)</a>
+            <a href="assets/docs/kics2026/2026_summer_paper.pdf" target="_blank" rel="noopener">2-page paper (PDF)</a>
+          </div>
+        </article>
+        <article class="entry">
+          <h3>Multi-Shell Space Data Centers in the Sun-Synchronous Orbit-Assisted LEO Mega-Constellation</h3>
+          <p><strong>T. Im</strong> and J. Choi</p>
+          <p class="entry-meta">
+            The Korean Institute of Communications and Information Sciences (KICS)
+            Winter Conference 2026 &middot; Feb 2026<br>
+            Poster Presentation &middot; Mona Yongpyong (Yongpyong Resort), Korea
+          </p>
+          <div class="pub-links">
+            <a href="assets/docs/kics2026/KICS2026_Poster_TaeukIm.pdf" target="_blank" rel="noopener">Poster (PDF)</a>
+            <a href="assets/docs/kics2026/KICS2026_TwoPagePaper_TaeukIm.pdf" target="_blank" rel="noopener">2-page paper (PDF)</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- 3. Manuscripts Under Review -->
+      <section class="cv-section" id="manuscripts" aria-labelledby="manuscripts-title">
+        <h2 id="manuscripts-title">Manuscripts Under Review</h2>
+        <article class="entry">
+          <h3>Dynamic Virtual Network Embedding for Online Task Offloading in LEO Mega-Constellations</h3>
+          <p>I. Choi, S. Kim, <strong>T. Im</strong>, and J. P. Choi</p>
+          <p class="entry-meta">Submitted to <em>IEEE Transactions on Mobile Computing</em>, 2026.</p>
+        </article>
+      </section>
+
+      <!-- 4. Research Experience -->
+      <section class="cv-section" id="research-experience" aria-labelledby="research-title">
+        <h2 id="research-title">Research Experience</h2>
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>Graduate Research Assistant</h3>
+            <span class="entry-date">Sep 2025 - Present</span>
+          </div>
+          <p class="entry-meta">KAIST &middot; Daejeon, Korea</p>
+          <p>
+            Investigating orbital edge computing architectures that combine conventional
+            LEO mega-constellations with dawn-dusk sun-synchronous orbit (DDSSO) nodes
+            and heterogeneous onboard GPUs to address power and computational bottlenecks
+            from an astrodynamics and space-systems perspective.
+          </p>
+          <ul>
+            <li>
+              Developing a multidisciplinary design optimization framework that links spacecraft
+              volume, solar-array size, orbit-dependent instantaneous and average solar power
+              generation, and onboard GPU capability; evaluating whether higher-performance
+              computing on DDSSO nodes can provide a better TSR-CAPEX tradeoff than expanding
+              a LEO-only constellation. (Current)
+            </li>
+            <li>
+              Formulated a system model and proposed an evaluation metric for the DDSSO-assisted
+              LEO space data center; designed and propagated LEO and DDSSO orbits in MATLAB and
+              quantified QoS gains over a conventional LEO-only constellation while evaluating
+              the effects of DDSSO altitude and onboard computing capability; paper submitted to KICS.
+            </li>
+            <li>
+              Proposed a DDSSO-assisted LEO architecture that extends satellites beyond conventional
+              bent-pipes to orbital edge computing and space data center nodes; leveraged the
+              near-continuous solar illumination of the DDSSO plane to support higher onboard
+              computing capability and submitted a position paper to KICS.
+            </li>
+            <li>
+              Developed a numerical two-body orbit propagator in MATLAB using ODE45. Verified
+              the conservation of orbital quantities and cross-checked propagated states against
+              an independent Keplerian propagator and GMAT's RK89 integrator across different orbit
+              cases; extended the framework to include J2 perturbation and am currently developing
+              a TudatPy-based orbit propagation and solar-power generation framework to evaluate
+              orbit-dependent power availability.
+            </li>
+          </ul>
+        </article>
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>Undergraduate Research Assistant</h3>
+            <span class="entry-date">Sep 2019 - Feb 2020</span>
+          </div>
+          <p class="entry-meta">Sejong University &middot; Seoul, Korea</p>
+          <p>Advisor: Prof. Jae Kyu Suhr</p>
+          <ul>
+            <li>Studied fundamentals of digital image processing, including edges, gradients, filters, and transforms.</li>
+            <li>Learned core concepts of computer vision, including least squares, RANSAC, and Viola-Jones object detection.</li>
+            <li>Studied basics of deep neural networks (DNNs), including CNN-based image classification and YOLO-based object detection.</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- 5. Skills -->
+      <section class="cv-section" id="skills" aria-labelledby="skills-title">
+        <h2 id="skills-title">Skills</h2>
+        <p class="section-text"><strong>Technical:</strong> Python, MATLAB, GMAT, C++, Arduino, LaTeX, Machine Learning, Linux</p>
+      </section>
+
+      <!-- 6. Work Experience -->
+      <section class="cv-section" id="work-experience" aria-labelledby="work-title">
+        <h2 id="work-title">Work Experience</h2>
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>Government-Funded Teaching Assistant</h3>
+            <span class="entry-date">Sep 2026 - Present</span>
+          </div>
+          <p class="entry-meta">KAIST &middot; Daejeon, Korea</p>
+          <ul><li>Supporting the Korea-Poland International Defense Cooperation Program.</li></ul>
+        </article>
+        <article class="entry">
+          <h3>Teaching Assistant</h3>
+          <p class="entry-meta">KAIST &middot; Daejeon, Korea</p>
+          <ul>
+            <li>
+              <strong>KAIST-Saudi Space Professional Development Program</strong>, KAIST Space
+              Institute (Summer 2026): Developed MATLAB modules for Walker Delta constellation
+              modeling, KAIST ground station visibility and feasible satellite analysis, and
+              satellite link budget and data rate evaluation.
+            </li>
+            <li>
+              <strong>Advanced English Listening and Advanced English Reading</strong>
+              (Summer 2026; Prof. Josalyn Knapic).
+            </li>
+            <li>
+              <strong>Reading Great Books on Human Intelligence and Civilization: Universe</strong>
+              (Spring 2026; Prof. Myung-Hyun Rhee). Supported course operation, student communication,
+              and academic activities related to the course.
+            </li>
+          </ul>
+        </article>
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>Teaching Assistant</h3>
+            <span class="entry-date">Summer 2025</span>
+          </div>
+          <p class="entry-meta">Korea University (KU) Camp</p>
+          <ul><li>Taught students in drone assembly and flight practice, Arduino practice, and coding exercises.</li></ul>
+        </article>
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>Teaching Assistant</h3>
+            <span class="entry-date">Summer 2023; Summer 2024; Winter 2024</span>
+          </div>
+          <p class="entry-meta">Korea Astronomy Olympiad (KAO)</p>
+          <ul><li>Instructed students in Astronomy Olympiad problem-solving and astrodynamics, and supervised telescope observations.</li></ul>
+        </article>
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>Social Service Agent (Military Duty)</h3>
+            <span class="entry-date">Jan 2021 - Oct 2022</span>
+          </div>
+          <p class="entry-meta">Jongno Police Station</p>
+        </article>
+      </section>
+
+      <!-- 7. Test Scores -->
+      <section class="cv-section" id="test-scores" aria-labelledby="scores-title">
+        <h2 id="scores-title">Test Scores</h2>
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>TOEFL</h3>
+            <span class="entry-date">Dec 2025</span>
+          </div>
+          <p>96 / 120</p>
+        </article>
+      </section>
+
+      <!-- 8. Awards & Honors -->
+      <section class="cv-section" id="awards" aria-labelledby="awards-title">
+        <h2 id="awards-title">Awards &amp; Honors</h2>
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>Government-Sponsored Scholarship</h3>
+            <span class="entry-date">Sep 2025</span>
+          </div>
+          <p class="entry-meta">KAIST &middot; Daejeon, Korea</p>
+          <p>Government-sponsored scholarship recipient during the master's degree program at KAIST.</p>
+        </article>
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>Full Scholarship</h3>
+            <span class="entry-date">Fall 2024</span>
+          </div>
+          <p class="entry-meta">Yonsei University &middot; Seoul, Korea</p>
+          <p>Granted a full scholarship for the semester in recognition of outstanding academic performance.</p>
+        </article>
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>Commendation Award (Certificate of Appreciation)</h3>
+            <span class="entry-date">Oct 2022</span>
+          </div>
+          <p class="entry-meta">Jongno Police Station &middot; Seoul, Korea</p>
+          <p>
+            Awarded for diligent and sincere performance of assigned military duties and contribution
+            to police administration (77th Anniversary of the Korean National Police).
+          </p>
+        </article>
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>Full Scholarship (First Rank)</h3>
+            <span class="entry-date">Spring 2019; Spring 2020</span>
+          </div>
+          <p class="entry-meta">Sejong University &middot; Seoul, Korea</p>
+          <p>Full scholarship awarded for first-place academic performance.</p>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 Taeuk Im &middot; Aerospace Communications &amp; Applied Intelligence (ACAI) Lab @ KAIST
+  </footer>
+</body>
+</html>
